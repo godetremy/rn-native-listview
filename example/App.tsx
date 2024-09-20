@@ -1,20 +1,31 @@
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, View, Text } from "react-native";
+import { NativeListview } from "rn-native-listview";
 
-import * as RNNativeListview from 'rn-native-listview';
-
-export default function App() {
+const App: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Text>{RNNativeListview.hello()}</Text>
+      <View style={{ height: 200, backgroundColor: "#F004" }} />
+      <NativeListview style={styles.listView} list_style="insetGrouped">
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+      </NativeListview>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+  },
+  listView: {
+    flex: 1,
+    height: 100,
+    width: "100%",
+    backgroundColor: "#F0F4",
   },
 });
+
+export default App;
